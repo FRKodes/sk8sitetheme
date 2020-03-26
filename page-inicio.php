@@ -36,7 +36,7 @@ get_header(); ?>
 								<div class="info">
 									<h3 class="title">
 										<a title="Ver <?php echo get_the_title() ?>" href="<?php the_permalink() ?>">
-											<?php echo get_read_more(get_the_title()); ?>
+											<?php echo get_the_title(); ?>
 										</a>
 									</h3>
 								</div>
