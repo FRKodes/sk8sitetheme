@@ -114,3 +114,15 @@ if ( ! function_exists( 'storefront_site_branding' ) ) {
 		<?php
 	}
 }
+
+function get_read_more($str_text){
+	
+	$cadena_final = $str_text;
+
+	if (strlen($str_text) > 90) {
+		$cadena_final = substr($str_text, 0, 90) . " ...";
+	}
+
+	return $cadena_final;
+	
+}

@@ -30,11 +30,15 @@ get_header(); ?>
 				if ( $the_query->have_posts() ) {
 					while ( $the_query->have_posts() ) {
 						$the_query->the_post();?>
-						<div class="col-xs-12 col-md-6 col-lg-4 item-news">
+						<div class="col-xs-12 col-md-6 item-news">
 							<div class="inner-container">
-								<div class="image"></div>
+								<div class="image" style="background-image: url(<?php echo the_post_thumbnail_url() ?>)"></div>
 								<div class="info">
-									<h3 class="title"><?php echo get_the_title() ?></h3>
+									<h3 class="title">
+										<a title="Ver <?php echo get_the_title() ?>" href="<?php the_permalink() ?>">
+											<?php echo get_read_more(get_the_title()); ?>
+										</a>
+									</h3>
 								</div>
 							</div>
 						</div><?php

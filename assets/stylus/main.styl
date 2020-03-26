@@ -1,3 +1,9 @@
+h2
+	font-size 1.8em !important
+	text-align center
+	&.title
+		font-weight 700
+		
 body
 	background purple
 #masthead
@@ -45,6 +51,26 @@ button.menu-toggle:hover
 	margin-top 70px
 .last-news-container
 	margin 40px 0
+.item-news
+	margin-bottom 20px
+	.inner-container
+		border 1px solid rgba(red, .1)
+		background rgba(black, .9)
+		.image
+			height 120px
+			background-position center center
+			background-size cover
+			background-repeat no-repeat
+			position relative
+		.info
+			padding 10px
+			position relative
+			.title
+				font-size .9em
+				margin-bottom 0
+				a
+					font-weight 700
+					color white					
 @media screen and (min-width: 375px)
 	.site-branding
 		width 120px !important
@@ -75,6 +101,22 @@ button.menu-toggle:hover
 	.main-banner
 		height 400px
 		margin-top 90px
+	.item-news
+		margin-bottom 30px
+		.inner-container
+			.image
+				height 130px
+			.info
+				.title
+					font-size 1em
+					height 40px
+					line-height 1.2em
+					overflow hidden
+					a
+						font-weight 700
+						color white
+						
 @media screen and (min-width: 992px)
 	.main-banner
 		height 500px
+		
