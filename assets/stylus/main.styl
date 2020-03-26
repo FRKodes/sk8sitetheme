@@ -7,15 +7,14 @@ h2
 body
 	background purple
 #masthead
-	.col-full
-		display flex
-#masthead
 	margin-bottom 0px
 	padding-top 10px
 	padding-bottom 10px
 	position fixed
 	width 100%
+	border-bottom 1px solid rgba(black, .3)
 	.col-full
+		display flex
 		justify-content space-between
 .site-branding
 	width 120px
@@ -54,7 +53,7 @@ button.menu-toggle:hover
 .item-news
 	margin-bottom 20px
 	.inner-container
-		border 1px solid rgba(red, .1)
+		border 1px solid rgba(black, .1)
 		background rgba(black, .9)
 		.image
 			height 120px
@@ -70,7 +69,10 @@ button.menu-toggle:hover
 				margin-bottom 0
 				a
 					font-weight 700
-					color white					
+					color white
+.site-footer
+	background-color rgba(black, .9) !important
+	padding 15px 0
 @media screen and (min-width: 375px)
 	.site-branding
 		width 120px !important
@@ -100,7 +102,7 @@ button.menu-toggle:hover
 				text-align right
 	.main-banner
 		height 400px
-		margin-top 90px
+		margin-top 85px
 	.item-news
 		margin-bottom 30px
 		.inner-container
@@ -115,15 +117,35 @@ button.menu-toggle:hover
 					a
 						font-weight 700
 						color white
-	.widget
-		&.widget_categories
-			margin-top 40px
-			.widget-title
-				text-transform uppercase
-				font-weight 600
-				margin-bottom 10px
-				padding-bottom 0
+	#secondary
+		&.widget-area
+			margin-top 60px !important
+		.widget
+			margin-bottom 0
+			&.widget_categories
+			&.widget_search
+				margin-top 20px
+				.widget-title
+					text-transform uppercase
+					font-weight 600
+					margin-bottom 10px
+					padding-bottom 0
+					font-size 1.1em
+		.widget_search
+			form
+				margin-bottom 0
+				.search-field
+					border 1px solid rgba(black, .3)
+	.site-footer
+		padding 15px 0 !important
+		.site-info
+			padding 15px 0 !important
 @media screen and (min-width: 992px)
 	.main-banner
 		height 500px
-		
+@media screen and (min-width: 1200px)
+	#secondary
+		.widget
+			margin-bottom 0
+			.widget-title
+				font-size 1.5em

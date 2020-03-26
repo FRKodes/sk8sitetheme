@@ -109,20 +109,53 @@ if ( ! function_exists( 'storefront_site_branding' ) ) {
 	function storefront_site_branding() {
 		?>
 		<div class="site-branding">
-			<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/sk8spotsmx.png" alt="sk8spotsmx Logo">
+			<a href="/" title="Volver al home"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/sk8spotsmx.png" alt="sk8spotsmx Logo"></a>
 		</div>
 		<?php
 	}
 }
 
-function get_read_more($str_text){
-	
-	$cadena_final = $str_text;
+if ( ! function_exists( 'storefront_footer_widgets' ) ) {
+	/**
+	 * Display the footer widget regions.
+	 *
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function storefront_footer_widgets() {
+		$rows    = intval( apply_filters( 'storefront_footer_widget_rows', 1 ) );
+		$regions = intval( apply_filters( 'storefront_footer_widget_columns', 3 ) );
 
-	if (strlen($str_text) > 90) {
-		$cadena_final = substr($str_text, 0, 90) . " ...";
+		for ( $row = 1; $row <= $rows; $row++ ) :
+
+			// Defines the number of active columns in this footer row.
+			for ( $region = $regions; 0 < $region; $region-- ) {
+				if ( is_active_sidebar( 'footer-' . esc_attr( $region + $regions * ( $row - 1 ) ) ) ) {
+					$columns = $region;
+					break;
+				}
+			}
+
+			if ( isset( $columns ) ) :
+				?>
+				<div class=<?php echo '"footer-widgets row-' . esc_attr( $row ) . ' col-' . esc_attr( $columns ) . ' fix"'; ?>>
+				<?php
+				for ( $column = 1; $column <= $columns; $column++ ) :
+					$footer_n = $column + $regions * ( $row - 1 );
+
+					if ( is_active_sidebar( 'footer-' . esc_attr( $footer_n ) ) ) :
+						?>
+					<div class="block footer-widget-<?php echo esc_attr( $column ); ?>">
+						<?php dynamic_sidebar( 'footer-' . esc_attr( $footer_n ) ); ?>
+					</div>
+						<?php
+					endif;
+				endfor;
+				?>
+			</div><!-- .footer-widgets.row-<?php echo esc_attr( $row ); ?> -->
+				<?php
+				unset( $columns );
+			endif;
+		endfor;
 	}
-
-	return $cadena_final;
-	
 }
