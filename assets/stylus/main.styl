@@ -1,0 +1,80 @@
+body
+	background purple
+#masthead
+	.col-full
+		display flex
+#masthead
+	margin-bottom 0px
+	padding-top 10px
+	padding-bottom 10px
+	position fixed
+	width 100%
+	.col-full
+		justify-content space-between
+.site-branding
+	width 120px
+	position relative
+	img
+		width 85%
+		height auto
+		display inline-block
+.handheld-navigation
+	width 100%
+	background rgba(white, .95)
+	position absolute
+	top 60px
+	left 0
+	text-align center
+	li
+		a
+			text-transform uppercase
+button.menu-toggle
+button.menu-toggle:hover
+	border none !important
+	&:focus
+		outline none
+.main-banner
+	background rgba(gray, .5)
+	width 100%
+	height 300px
+	display block
+	background-repeat no-repeat
+	background-size cover
+	background-position center center
+	overflow hidden
+	margin-top 70px
+.last-news-container
+	margin 40px 0
+@media screen and (min-width: 375px)
+	.site-branding
+		width 120px !important
+@media screen and (min-width: 768px)
+	#masthead
+		.col-full
+			align-items center
+	.main-navigation
+		ul
+			li
+				&.current_page_item
+					font-weight bold
+					a
+						color black !important
+				a
+					padding 1.3em .6em !important
+					text-transform uppercase
+	.site-branding
+		width 140px
+		margin-bottom 0 !important
+		img
+			width 95%
+	#site-navigation
+		margin-right 0
+		.primary-navigation
+			.menu
+				text-align right
+	.main-banner
+		height 400px
+		margin-top 90px
+@media screen and (min-width: 992px)
+	.main-banner
+		height 500px
