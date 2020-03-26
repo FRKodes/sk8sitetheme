@@ -56,14 +56,15 @@
 	</header><!-- #masthead -->
 	
 	<?php 
-	$args = array('post_type' => 'banner', 'post_status' => 'publish', 'posts_per_page' => 1 );
-	$loop = new WP_Query( $args ); 
-	while ( $loop->have_posts() ) : $loop->the_post(); 
-		echo "<div class='main-banner' style='background-image: url(".get_the_post_thumbnail_url().")'></div>";
-	endwhile;
-	wp_reset_postdata(); ?>
+	if (is_front_page()) {
+		$args = array('post_type' => 'banner', 'post_status' => 'publish', 'posts_per_page' => 1 );
+		$loop = new WP_Query( $args ); 
+		while ( $loop->have_posts() ) : $loop->the_post(); 
+			echo "<div class='main-banner' style='background-image: url(".get_the_post_thumbnail_url().")'></div>";
+		endwhile;
+		wp_reset_postdata();
+	}
 
-	<?php
 	/**
 	 * Functions hooked in to storefront_before_content
 	 *
