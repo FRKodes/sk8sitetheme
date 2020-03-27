@@ -3,7 +3,9 @@ h2
 	text-align center
 	&.title
 		font-weight 700
-		
+	&.entry-title a
+		font-weight 700
+		color black
 body
 	background purple
 #masthead
@@ -70,6 +72,15 @@ button.menu-toggle:hover
 				a
 					font-weight 700
 					color white
+.banner-google-container-feed
+	height 200px
+	width 100%
+	display block
+	overflow hidden
+	background rgba(black, .2)
+	margin-bottom 25px
+#post-2
+	margin-bottom 0
 .site-footer
 	background-color rgba(black, .9) !important
 	padding 15px 0
@@ -77,6 +88,8 @@ button.menu-toggle:hover
 	.site-branding
 		width 120px !important
 @media screen and (min-width: 768px)
+	.site-main
+		margin-bottom 0 !important
 	#masthead
 		.col-full
 			align-items center
@@ -117,6 +130,10 @@ button.menu-toggle:hover
 					a
 						font-weight 700
 						color white
+	.banner-google-container-feed
+		height 120px
+		margin-bottom 30px
+		
 	#secondary
 		&.widget-area
 			margin-top 60px !important
@@ -144,6 +161,10 @@ button.menu-toggle:hover
 	.main-banner
 		height 500px
 @media screen and (min-width: 1200px)
+	.item-news
+		.inner-container
+			.image
+				height 200px
 	#secondary
 		.widget
 			margin-bottom 0

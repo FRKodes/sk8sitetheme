@@ -27,9 +27,18 @@ get_header(); ?>
 
 		    	<div class="row"><?php
 				$the_query = new WP_Query( $args );
+				$counter = 0;
 				if ( $the_query->have_posts() ) {
 					while ( $the_query->have_posts() ) {
-						$the_query->the_post();?>
+						$counter++;
+						$the_query->the_post();
+						if($counter > 6){ ?>
+							<div class="col-xs-12 col-md-12 text-center">
+								<div class="banner-google-container-feed">
+									<script data-ad-client="ca-pub-6490955290269477" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+								</div>
+							</div><?php
+						}?>
 						<div class="col-xs-12 col-md-6 item-news">
 							<div class="inner-container">
 								<div class="image" style="background-image: url(<?php echo the_post_thumbnail_url() ?>)"></div>
@@ -45,21 +54,32 @@ get_header(); ?>
 					} 
 				}
 				wp_reset_postdata();?>
+				
+				<div class="col-xs-12 col-md-12 text-center">
+					<div class="banner-google-container-feed">
+						<script data-ad-client="ca-pub-6490955290269477" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					</div>
+				</div>
+
 				</div>	
 			</div>
 
-		<?php
-		if ( have_posts() ) :
-
-			get_template_part( 'loop' );
-
-		else :
-
-			get_template_part( 'content', 'none' );
-
-		endif;
-		?>
-
+			<?php
+			if ( have_posts() ) :
+				get_template_part( 'loop' );
+			else :
+				get_template_part( 'content', 'none' );
+			endif;
+			?>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-12 text-center">
+						<div class="banner-google-container-feed">
+							<script data-ad-client="ca-pub-6490955290269477" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						</div>
+					</div>	
+				</div>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
