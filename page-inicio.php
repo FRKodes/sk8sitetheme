@@ -32,16 +32,18 @@ get_header(); ?>
 					while ( $the_query->have_posts() ) {
 						$counter++;
 						$the_query->the_post();
-						if($counter > 6){ ?>
+						if($counter == 7 ){ ?>
 							<div class="col-xs-12 col-md-12 text-center">
 								<div class="banner-google-container-feed">
 									<script data-ad-client="ca-pub-6490955290269477" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 								</div>
 							</div><?php
 						}?>
-						<div class="col-xs-12 col-md-6 item-news">
+						<div class="col-xs-12 col-md-6 item-news" data-counter="<?php echo $counter; ?>">
 							<div class="inner-container">
-								<div class="image" style="background-image: url(<?php echo the_post_thumbnail_url() ?>)"></div>
+								<div class="image" style="background-image: url(<?php echo the_post_thumbnail_url() ?>)">
+									<a title="Ver <?php echo get_the_title() ?>" href="<?php the_permalink() ?>"></a>
+								</div>
 								<div class="info">
 									<h3 class="title">
 										<a title="Ver <?php echo get_the_title() ?>" href="<?php the_permalink() ?>">

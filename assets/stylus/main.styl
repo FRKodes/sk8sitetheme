@@ -21,6 +21,9 @@ body
 .site-branding
 	width 120px
 	position relative
+	a
+		&:focus
+			outline none
 	img
 		width 85%
 		height auto
@@ -35,6 +38,15 @@ body
 	li
 		a
 			text-transform uppercase
+.site-header
+	ul.menu
+		li
+			a
+				&:hover
+				&:active
+				&:focus
+					outline none
+			
 button.menu-toggle
 button.menu-toggle:hover
 	border none !important
@@ -63,6 +75,17 @@ button.menu-toggle:hover
 			background-size cover
 			background-repeat no-repeat
 			position relative
+			transition opacity .7s ease
+			&:hover
+				opacity .5
+				transition opacity .5s ease
+			a
+				width 100%
+				height 100%
+				display block
+				overflow hidden
+				&:focus
+					outline none
 		.info
 			padding 10px
 			position relative
@@ -72,6 +95,8 @@ button.menu-toggle:hover
 				a
 					font-weight 700
 					color white
+					&:focus
+						outline none
 .banner-google-container-feed
 	height 200px
 	width 100%
