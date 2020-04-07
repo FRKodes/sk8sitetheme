@@ -1,3 +1,5 @@
+.bold
+	font-weight bold
 h2
 	font-size 1.8em !important
 	text-align center
@@ -104,15 +106,160 @@ button.menu-toggle:hover
 	overflow hidden
 	background rgba(black, .2)
 	margin-bottom 25px
+.banner-google-container-sidebar
+	height 200px
+	width 100%
+	display block
+	overflow hidden
+	background rgba(green, .2)
+	margin-bottom 50px
+	margin-top 40px
 #post-2
 	margin-bottom 0
+form
+	position relative
+.form-group
+	&.error
+		.form-control
+			border 1px solid rgba(red, .7)
+	.form-control
+		border-radius 0
+		background white
+		color black
+		border 1px solid rgba(gray, .5)
+		box-shadow none
+	.btn.btn-primary
+		background black
+		color white
+		transition all .5s ease
+		&:active
+		&:focus
+		&:hover
+		&:visited
+			background rgba(black, .6)
+			transition all .5s ease
+textarea
+	resize none
+.sent_mail_alert
+	background rgba(black, .9)
+	color white
+	padding 30px 20px
+	position absolute
+	bottom 120px
+	width 100%
+	display none
+.single
+	article
+		h1
+			font-size 1.6em
+			font-weight bold
+			margin-bottom 0
+			border none
+.hentry
+	.entry-header
+		border none
+.woocommerce-breadcrumb
+	margin-top -50px
+.post-photo
+	width 100%
+	height 160px
+	display block
+	background rgba(gray, .5)
+	background-repeat no-repeat
+	background-position center center
+	background-size cover
+	a
+		height 100%
+		width 100%
+		display block
+		&:focus
+		&:hover
+		&:active
+		&:visited
+			outline none
+		
+.post-info
+	background black
+	padding 10px 20px
+	.post-title
+		margin-bottom 5px
+		a
+			color white
+	.post-description
+		a
+			color rgba(white, .7)
+.page-header
+	margin-top 10px
+	h1.page-title
+		font-weight bold
+.entry-header
+	margin-top 20px
+	h1.entry-title
+		font-weight bold
 .site-footer
 	background-color rgba(black, .9) !important
 	padding 15px 0
+	h3
+		font-size 1em
+		text-align center
+		color white !important
+	.form-group
+		margin-bottom 10px
+		.form-control
+			border-radius 0
+		input[type="submit"]
+			display inline-block
+			transition all .5s ease
+			&:hover
+			&:active
+			&:focus
+				background rgba(black, .5)
+				color white
+				transition all .5s ease
+				outline none
+	.logo-footer
+		text-align center
+		padding 30px 0
+		display flex
+		align-items center
+		justify-content center
+		img
+			width 120px
+			height auto
+			display inline-block
+.redes-footer
+	ul
+		padding 0
+		text-align center
+		margin 0
+		li
+			display inline-block
+			margin 0 5px
+			a
+				color white !important
+				text-decoration none !important
+				transition color .5s ease
+				font-size 1.4em
+				&:hover
+					color rgba(white, .8)
+					transition color .5s ease
+				&:active
+					outline none
+.newsletter-footer
+	text-align center
 @media screen and (min-width: 375px)
 	.site-branding
-		width 120px !important
+		width 150px !important
+	.item-news
+		.inner-container
+			.image
+				height 240px
 @media screen and (min-width: 768px)
+	.hentry
+		.entry-header
+			margin-bottom 20px !important
+			margin-top -20px
+			border none !important
 	.site-main
 		margin-bottom 0 !important
 	#masthead
@@ -126,7 +273,7 @@ button.menu-toggle:hover
 					a
 						color black !important
 				a
-					padding 1.3em .6em !important
+					padding 10px 4px !important
 					text-transform uppercase
 	.site-branding
 		width 140px
@@ -140,7 +287,7 @@ button.menu-toggle:hover
 				text-align right
 	.main-banner
 		height 400px
-		margin-top 85px
+		margin-top 70px
 	.item-news
 		margin-bottom 30px
 		.inner-container
@@ -156,42 +303,169 @@ button.menu-toggle:hover
 						font-weight 700
 						color white
 	.banner-google-container-feed
-		height 120px
+		height 150px
 		margin-bottom 30px
-		
+	article.type-post
+		display flex
+		flex-flow row
+		justify-content space-between
+		align-items flex-start
+		margin-bottom 10px !important
+		.post-photo
+			width 40%
+			height 200px
+		.post-info
+			width 60%
+			background black
+			padding 10px 20px
+			overflow hidden
+			height 200px
+			.post-title
+				margin-bottom 0
+				a
+					color white
+			.post-description
+				height 104px
+				overflow hidden
+	.single
+		article
+			display flex
+			flex-flow column
+			margin-bottom 0px !important
+			h1
+				font-size 1.8em
+				margin-top 10px
+			.post-photo
+				width 40%
+				height 200px
+			.post-info
+				width 60%
+				background black
+				padding 10px 20px
+				overflow hidden
+				height 200px
+				.post-title
+					margin-bottom 0
+					a
+						color white
+				.post-description
+					height 104px
+					overflow hidden
 	#secondary
 		&.widget-area
 			margin-top 60px !important
 		.widget
 			margin-bottom 0
+			.widget-title
+				text-transform uppercase
+				font-weight 600
+				margin-bottom 10px
+				padding-bottom 0
+				font-size 1.3em !important
 			&.widget_categories
 			&.widget_search
 				margin-top 20px
-				.widget-title
-					text-transform uppercase
-					font-weight 600
-					margin-bottom 10px
-					padding-bottom 0
-					font-size 1.1em
 		.widget_search
 			form
 				margin-bottom 0
 				.search-field
 					border 1px solid rgba(black, .3)
+	.banner-google-container-sidebar
+		height 400px
+	.page-header
+		margin-top -20px
+	.sent_mail_alert
+		padding 70px 50px
 	.site-footer
-		padding 15px 0 !important
+		padding 30px 0 !important
 		.site-info
 			padding 15px 0 !important
+		h3
+			font-size .8em
+	.redes-footer
+		display flex
+		align-items flex-start
+		flex-flow column
+		justify-content center
+		ul
+			text-align left
+			li
+				margin 0 10px
+				a
+					font-size 1em
+			li:first-of-type
+				margin-left 0
+	.newsletter-footer
+		text-align right
+		h3
+			text-align right
 @media screen and (min-width: 992px)
 	.main-banner
 		height 500px
+	.redes-footer
+		ul
+			li
+				a
+					font-size 1.4em
 @media screen and (min-width: 1200px)
+	.main-navigation
+		ul
+			li
+				a
+					padding 10px !important
+					&:last-of-type
+						padding-right 0 !important
 	.item-news
 		.inner-container
 			.image
 				height 200px
+	
+	article.type-post
+		margin-bottom 15px !important
+		.post-photo
+			width 35%
+			height 250px
+		.post-info
+			width 65%
+			padding 10px 25px
+			height 250px
+			.post-title
+				margin-bottom 20px
+			.post-description
+				height 124px
+	
+	.single
+		article
+			h1
+				font-size 2.6em
+				
 	#secondary
 		.widget
 			margin-bottom 0
 			.widget-title
 				font-size 1.5em
+	.site-footer
+		padding 50px 0 10px 0 !important
+		h3
+			font-size .9em
+		.redes-footer
+			display flex
+			align-items flex-start
+			flex-flow column
+			justify-content center
+			ul
+				text-align left
+				li
+					margin 0 10px
+					a
+						font-size 1.6em
+				li:first-of-type
+					margin-left 0
+		.logo-footer
+			padding 0
+			img
+				width 200px
+		.newsletter-footer
+			text-align right
+			h3
+				text-align right

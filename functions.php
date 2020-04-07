@@ -33,6 +33,12 @@ function sk8_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'sk8_enqueue_styles');
 
+function sk8_theme_js() {
+    wp_enqueue_script( 'sk8_theme_js', get_stylesheet_directory_uri() . '/all.js', array( 'jquery' ), '1.0', true );
+}
+
+add_action('wp_enqueue_scripts', 'sk8_theme_js');
+
 
 function sk8_remove_actions_parent_theme() {
    remove_action('storefront_header', 'storefront_secondary_navigation', 30);
@@ -115,47 +121,73 @@ if ( ! function_exists( 'storefront_site_branding' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_footer_widgets' ) ) {
+if ( ! function_exists( 'storefront_post_header' ) ) {
 	/**
-	 * Display the footer widget regions.
+	 * Display the post header with a link to the single post
 	 *
-	 * @since  1.0.0
-	 * @return void
+	 * @since 1.0.0
 	 */
-	function storefront_footer_widgets() {
-		$rows    = intval( apply_filters( 'storefront_footer_widget_rows', 1 ) );
-		$regions = intval( apply_filters( 'storefront_footer_widget_columns', 3 ) );
+	function storefront_post_header() {
+		?>
+		<header class="entry-header">
+		<?php
 
-		for ( $row = 1; $row <= $rows; $row++ ) :
+		/**
+		 * Functions hooked in to storefront_post_header_before action.
+		 *
+		 * @hooked storefront_post_meta - 10
+		 */
+		do_action( 'storefront_post_header_before' );
 
-			// Defines the number of active columns in this footer row.
-			for ( $region = $regions; 0 < $region; $region-- ) {
-				if ( is_active_sidebar( 'footer-' . esc_attr( $region + $regions * ( $row - 1 ) ) ) ) {
-					$columns = $region;
-					break;
-				}
-			}
+		if ( is_single() ) {
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		} else {
+			the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		}
 
-			if ( isset( $columns ) ) :
-				?>
-				<div class=<?php echo '"footer-widgets row-' . esc_attr( $row ) . ' col-' . esc_attr( $columns ) . ' fix"'; ?>>
-				<?php
-				for ( $column = 1; $column <= $columns; $column++ ) :
-					$footer_n = $column + $regions * ( $row - 1 );
+		do_action( 'storefront_post_header_after' );
+		?>
+		</header><!-- .entry-header -->
+		<?php
+	}
+}
 
-					if ( is_active_sidebar( 'footer-' . esc_attr( $footer_n ) ) ) :
-						?>
-					<div class="block footer-widget-<?php echo esc_attr( $column ); ?>">
-						<?php dynamic_sidebar( 'footer-' . esc_attr( $footer_n ) ); ?>
-					</div>
-						<?php
-					endif;
-				endfor;
-				?>
-			</div><!-- .footer-widgets.row-<?php echo esc_attr( $row ); ?> -->
-				<?php
-				unset( $columns );
-			endif;
-		endfor;
+if ( ! function_exists( 'storefront_post_content' ) ) {
+	/**
+	 * Display the post content with a link to the single post
+	 *
+	 * @since 1.0.0
+	 */
+	function storefront_post_content() {
+		?>
+		<div class="entry-content">
+		<?php
+
+		/**
+		 * Functions hooked in to storefront_post_content_before action.
+		 *
+		 * @hooked storefront_post_thumbnail - 10
+		 */
+		do_action( 'storefront_post_content_before' );
+
+		the_content(
+			sprintf(
+				/* translators: %s: post title */
+				__( 'Continue reading %s', 'storefront' ),
+				'<span class="screen-reader-text">' . get_the_title() . '</span>'
+			)
+		);
+
+		do_action( 'storefront_post_content_after' );
+
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'storefront' ),
+				'after'  => '</div>',
+			)
+		);
+		?>
+		</div><!-- .entry-content -->
+		<?php
 	}
 }

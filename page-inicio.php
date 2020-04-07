@@ -21,7 +21,7 @@ get_header(); ?>
 			<div class="container last-news-container">
 				<div class="row">
 					<div class="col-xs-12 col-md-12">
-						<h2 class="title">ÚLTIMAS NOTICIAS</h2>
+						<h1 class="title text-center bold">ÚLTIMAS NOTICIAS</h1>
 					</div>	
 				</div>
 
@@ -73,15 +73,7 @@ get_header(); ?>
 				get_template_part( 'content', 'none' );
 			endif;
 			?>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-12 text-center">
-						<div class="banner-google-container-feed">
-							<script data-ad-client="ca-pub-6490955290269477" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						</div>
-					</div>	
-				</div>
-			</div>
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

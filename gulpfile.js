@@ -15,6 +15,7 @@ gulp.task('compress', function () {
 gulp.task('concat', function() {
 	return gulp.src([
 				'./assets/css/base-theme.css',
+				'./assets/css/icons-font.css',
 				'./assets/css/main.css'
 				])
 		.pipe(concat('sk8-styles.css'))
