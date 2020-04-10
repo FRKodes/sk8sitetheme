@@ -59,8 +59,17 @@
 	if (is_front_page()) {
 		$args = array('post_type' => 'banner', 'post_status' => 'publish', 'posts_per_page' => 1 );
 		$loop = new WP_Query( $args ); 
-		while ( $loop->have_posts() ) : $loop->the_post(); 
-			echo "<div class='main-banner' style='background-image: url(".get_the_post_thumbnail_url().")'></div>";
+		while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<div class="main-banner" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>)">
+				<div class="line-credits">
+					<div class="skater">
+						<b class="mayus"><?php echo get_field('truco'); ?></b> - <a target="_blank" title="Ver el perfil de <?php echo get_field('nombre_skater'); ?>" href="<?php echo get_field('link_skater'); ?>"><?php echo get_field('nombre_skater'); ?></a>
+					</div>
+					<div class="photographer">
+						<b>Foto: </b><a target="_blank" title="Ver el perfil de <?php echo get_field('nombre_fotografo'); ?>" href="<?php echo get_field('link_fotografo'); ?>"><?php echo get_field('nombre_fotografo'); ?></a>
+					</div>
+				</div>
+			</div><?php
 		endwhile;
 		wp_reset_postdata();
 	}

@@ -64,6 +64,24 @@ button.menu-toggle:hover
 	background-position center center
 	overflow hidden
 	margin-top 70px
+	position relative
+	.line-credits
+		position absolute
+		bottom 5px
+		width 100%
+		display flex
+		flex-flow column
+		justify-content space-between
+		color rgba(white, .7)
+		font-size .75em
+		a
+			color rgba(white, .7)
+		.skater
+		.photographer
+			text-align left
+			padding-left 10px
+			width 100%
+		
 .last-news-container
 	margin 40px 0
 .item-news
@@ -358,6 +376,18 @@ input#submit
 	.main-banner
 		height 400px
 		margin-top 70px
+		.line-credits
+			bottom 5px
+			flex-flow row
+			justify-content space-between
+			font-size .9em
+			.skater
+			.photographer
+				width 45%
+				padding 0 0 0 20px
+			.photographer
+				text-align right
+				padding 0 20px 0 0
 	.item-news
 		margin-bottom 30px
 		.inner-container
@@ -527,6 +557,9 @@ input#submit
 					padding 10px !important
 					&:last-of-type
 						padding-right 0 !important
+	.main-banner
+		.line-credits
+			font-size 1em
 	.item-news
 		.inner-container
 			.image
