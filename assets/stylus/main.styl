@@ -195,7 +195,14 @@ textarea
 		&:active
 		&:visited
 			outline none
-		
+ul.products
+	li.product
+		.woocommerce-LoopProduct-link
+			&:focus
+			&:visited
+			&:active
+				outline none
+				
 .post-info
 	background black
 	padding 10px 20px
@@ -330,6 +337,8 @@ input#submit
 					color rgba(white, .8)
 					transition color .5s ease
 				&:active
+				&:focus
+				&:visited
 					outline none
 .newsletter-footer
 	text-align center
@@ -466,6 +475,10 @@ input#submit
 		.widget a:not(.button):not(.components-button)
 			text-decoration none
 			font-weight 700
+			&:active
+			&:focus
+			&:visited
+				outline none
 		.widget
 			margin-bottom 0
 			.widget-title
