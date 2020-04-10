@@ -40,7 +40,7 @@ get_header(); ?>
 							<div class="form-group">
 								<textarea name="mensaje" id="mensaje" class="form-control" placeholder="Mensaje" cols="30" rows="10"></textarea>
 							</div>
-							<div class="form-group">
+							<div class="form-group form-submit">
 								<input type="submit" name="enviar" value="ENVIAR" class="btn btn-primary">
 							</div>
 							<div class="sent_mail_alert text-center">🤙🏼😎<br>Tu mensaje ha sido enviado con éxito, nos pondremos en contacto contigo a la brevedad.</div>

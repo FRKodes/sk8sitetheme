@@ -196,6 +196,74 @@ textarea
 	margin-top 20px
 	h1.entry-title
 		font-weight bold
+.search-form
+	label
+		width 100%
+.widget_categories
+	ul
+		li.cat-item
+			text-transform uppercase
+aside.entry-taxonomy
+	.cat-links
+		a
+			text-transform uppercase
+	.tags-links
+		a
+			text-transform uppercase
+.hentry
+	.entry-taxonomy
+		border none !important
+.nav-links
+	display flex
+	flex-flow column
+	.nav-previous
+		margin-bottom 50px
+	.nav-previous
+	.nav-next
+		width 100% !important
+		a
+			color black
+			transition all .5s ease
+			&:hover
+				color rgba(black, .7)
+				transition all .5s ease
+			&:focus
+			&:visited
+			&:active
+				outline none
+#comments
+	padding-top 0 !important
+#respond
+	padding 20px !important
+	background rgba(black, .05) !important
+.comments-area
+	.comment-reply-title
+		text-transform uppercase
+		text-align center
+		font-size 1.4em
+		font-weight bold
+	.logged-in-as
+		text-align center
+		a
+			color black
+			&[aria-label="Conectado como admin_sk8. Edita tu perfil."]
+				font-style italic
+textarea#comment
+	border 1px solid rgba(black, .3)
+.form-submit
+	text-align center
+input#submit
+	background black
+	color white
+	text-transform uppercase
+	transition all .5s ease
+	&:hover
+		background rgba(black, .7)
+		transition all .5s ease
+	&:focus
+	&:active
+	&:visited
+		outline none
 .site-footer
 	background-color rgba(black, .9) !important
 	padding 15px 0
@@ -265,6 +333,8 @@ textarea
 	#masthead
 		.col-full
 			align-items center
+		&.transparent
+			background rgba(white, .9)
 	.main-navigation
 		ul
 			li
@@ -327,6 +397,15 @@ textarea
 			.post-description
 				height 104px
 				overflow hidden
+		.post-info
+			.post-title
+				a
+					&:focus
+					&:visited
+					&:active
+					&:hover
+						outline none
+					
 	.single
 		article
 			display flex
@@ -354,6 +433,9 @@ textarea
 	#secondary
 		&.widget-area
 			margin-top 60px !important
+		.widget a:not(.button):not(.components-button)
+			text-decoration none
+			font-weight 700
 		.widget
 			margin-bottom 0
 			.widget-title
@@ -370,12 +452,35 @@ textarea
 				margin-bottom 0
 				.search-field
 					border 1px solid rgba(black, .3)
+	.widget_categories
+		ul
+			li.cat-item
+				font-size 1.2em
+				
 	.banner-google-container-sidebar
 		height 400px
 	.page-header
 		margin-top -20px
 	.sent_mail_alert
 		padding 70px 50px
+	
+	.nav-links
+		flex-flow row
+		justify-content space-between
+		.nav-previous
+			margin-bottom 0
+		.nav-previous
+		.nav-next
+			width 40% !important
+			
+	
+	#respond
+		padding 30px !important
+		background rgba(black, .05) !important
+	#comments
+		width 100%
+	.form-submit
+		text-align right
 	.site-footer
 		padding 30px 0 !important
 		.site-info
@@ -402,6 +507,13 @@ textarea
 @media screen and (min-width: 992px)
 	.main-banner
 		height 500px
+		margin-top 69px
+	
+	.nav-links
+		.nav-previous
+		.nav-next
+			width 40% !important
+			
 	.redes-footer
 		ul
 			li
@@ -469,3 +581,21 @@ textarea
 			text-align right
 			h3
 				text-align right
+@media screen and (min-width: 1400px)
+	.main-banner
+		height 600px
+@media screen and (min-width: 1800px)
+	.main-banner
+		height 700px
+@media screen and (min-width: 2000px)
+	.main-banner
+		height 800px
+@media screen and (min-width: 2200px)
+	.main-banner
+		height 900px
+@media screen and (min-width: 2400px)
+	.main-banner
+		height 1000px
+@media screen and (min-width: 2600px)
+	.main-banner
+		height 1100px

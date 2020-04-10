@@ -49,3 +49,14 @@ jQuery(function(){
 		};
 	var $validate = jQuery('#contactForm').validate(formSettings).data('validate');
 });
+
+
+window.addEventListener("scroll", function (event) {
+    var scroll = this.scrollY;
+    if (scroll != 0) {
+    	jQuery('#masthead').addClass('transparent');
+    }else{
+    	jQuery('#masthead').removeClass('transparent');
+    }
+    console.log(scroll)
+});

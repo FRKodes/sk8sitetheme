@@ -21,7 +21,7 @@
 				<div class="col-xs-12 col-md-3 mr-auto redes-footer">
 					<h3>SÍGUENOS EN REDES</h3>
 					<ul>
-						<li><a class="icon-fb" target="_blank" href="https://business.facebook.com/sk8SpotsMx/?business_id=925180544169454"></a></li>
+						<li><a class="icon-fb" target="_blank" href="https://www.facebook.com/sk8SpotsMx"></a></li>
 						<li><a class="icon-tw" target="_blank" href="https://twitter.com/Sk8SpotsMx"></a></li>
 						<li><a class="icon-ig" target="_blank" href="https://www.instagram.com/sk8spotsmx/"></a></li>
 						<li><a class="icon-yt" target="_blank" href="https://www.youtube.com/channel/UCh_POGdpvel-NML9LJQkWmg?sub_confirmation=1"></a></li>
