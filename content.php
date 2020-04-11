@@ -8,7 +8,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="post-photo" style="background-image: url(<?php the_post_thumbnail_url() ?>)">
+	<div class="post-photo" style="background-image: url(<?php the_post_thumbnail_url('large') ?>)">
 		<a href="<?php the_permalink() ?>"></a>
 	</div>
 	<div class="post-info">
