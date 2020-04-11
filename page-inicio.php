@@ -49,7 +49,7 @@ get_header(); ?>
 						}?>
 						<div class="col-xs-12 col-md-6 item-news" data-counter="<?php echo $counter; ?>">
 							<div class="inner-container">
-								<div class="image" style="background-image: url(<?php echo the_post_thumbnail_url() ?>)">
+								<div class="image" style="background-image: url(<?php echo the_post_thumbnail_url('medium') ?>)">
 									<a title="Ver <?php echo get_the_title() ?>" href="<?php the_permalink() ?>"></a>
 								</div>
 								<div class="info">
@@ -84,7 +84,7 @@ get_header(); ?>
 
 			<?php
 			if ( have_posts() ) :
-				get_template_part( 'loop' );
+				the_content();
 			else :
 				get_template_part( 'content', 'none' );
 			endif;
