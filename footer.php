@@ -71,6 +71,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </body>
 </html>
