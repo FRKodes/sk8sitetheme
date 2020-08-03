@@ -58,5 +58,4 @@ window.addEventListener("scroll", function (event) {
     }else{
     	jQuery('#masthead').removeClass('transparent');
     }
-    console.log(scroll)
 });
