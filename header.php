@@ -14,7 +14,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<meta name="description" content="El mejor sitio para encontrar noticias y videos sobre patinetas de México y el mundo. Difusión de eventos de skateboarding en México. Reportajes de Skateboard en México, entrevistas, fotos, videos y todo lo relacionado con el skate en México.">
 <?php wp_head(); ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60609625-2"></script>
 <meta name="google-site-verification" content="E04iBql2ry9aAtZXcrBIHUv_v8Y2GxTY8UIgM61fnZ4" />
