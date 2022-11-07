@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "gulp": "^3.0.2"
+    "gulp": "^3.9.1"
   },
   "devDependencies": {
     "gulp-concat": "^2.6.1",
